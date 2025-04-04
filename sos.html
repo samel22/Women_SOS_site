@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's SOS alert App!!!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px; /* Reduce navbar thickness */
+            height: 80px; /* Adjust height for a thinner navbar */
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column; /* Stack image and text vertically */
+            align-items: center;
+            
+            
+        }
+
+        .logo img {
+            height: 49px;
+            width: 66px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 14px;
+            font-weight: bold;
+            color: #ff4081;
+            margin-top: -5px; /* Adjust spacing to bring text closer */
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #ff4081;
+        }
+
+        .cta-btn {
+            padding: 10px 25px;
+            background-color: #ff5a5f;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 100px 20px;
+            background: linear-gradient(to right, #fff6f9, #ffe3ef);
+        }
+
+        .main-content-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            /* Add space between the text and image */
+            flex-wrap: wrap;
+            /* Ensure the layout is responsive */
+        }
+
+        .main-content {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .main-content h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .ratings {
+            font-size: 14px;
+            color: #f50057;
+            margin-bottom: 15px;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .download-buttons img {
+            width: 160px;
+        }
+
+        .alert {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 30px;
+            transition: transform 0.6s ease, box-shadow 0.3s ease-in-out;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+            
+        }
+
+        .alert:hover{
+            transform: translate(20px, -10PX);
+
+        }
+
+        .aboutus {
+            display: flex;
+            /* This enables the flexbox layout, making the child elements align in a row */
+            align-items: flex-start;
+            /* This makes sure that the elements (image and text) are aligned from the top, rather than being centered vertically.*/
+            justify-content: center;
+            /* centers  horizontally*/
+            gap: 50px;
+            /* between img and text */
+            margin-top: 70px;
+            flex-wrap: wrap;
+
+        }
+        
+
+        .whyus {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+            
+        }
+
+        
+
+        footer {
+            background-color: #fff;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #eee;
+        }
+
+
+        .first {
+            background-color: white;
+            border-radius: 30px;
+            padding: 20px 30px;
+            display: inline-block;
+            transition: transform 0.5s ease-in-out;
+            width: 544px; /* Set a fixed width */
+    height: 130px; /* Set a fixed height */
+    justify-content: center;
+    margin-bottom: 30px;
+           
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+   
+
+        }
+
+        .first:hover {
+            background-color: #f8797f;
+            transform: translate(20px, -20PX);
+        }
+
+        .grey {
+            color: #6b6969;
+        }
+
+        #testimonials-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.testimonial-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 280px; /* Horizontal Rectangle */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #f6aed0;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.testimonial-card h5 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f50057;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black; /* Make arrows visible */
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="https://static.vecteezy.com/system/resources/previews/019/999/595/original/sos-emergency-icon-vector.jpg" alt="Logo">
+             
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">contacts</a>
+            <a href="#">location</a>
+            <a href="#">About</a>
+            <a href="#">testimonials</a>
+            <a href="#">Manage Subscription</a>
+        </nav>
+        <a href="#" class="cta-btn">Free Demo</a>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main>
+        <div class="main-content-wrapper">
+            <div class="main-content">
+                <p class="ratings">⭐⭐⭐⭐⭐ Over 7 million 5-star ratings</p>
+                <h1>We're sos, the world's #1 sos alert app</h1>
+                <p>Over 420 million people around the world use the sos app </p>
+                <div class="download-buttons">
+                    <br><br>
+                    <!--<a href="#"><img src="" alt="Download on the App Store"></a>
+                    <a href="#"><img src="googleplay.png" alt="Get it on Google Play"></a>-->
+                </div>
+            </div>
+            <img src="phone.avif" alt="Phone App Screenshot" class="alert">
+        </div>
+    </main>
+
+    <!-- About Us Section -->
+    <h1 class="whyus">WHY US?</h1>
+    <div class="aboutus">
+        <div class="whyusimg">
+        <img src="phone.png" >
+    </div>  
+        <br>
+        <br>
+        <div class="aboutuscontent">
+            <div class="first">
+                <h3>Instant SOS Alerts:</h3><br>
+                <p class="grey">Send emergency alerts to family, friends, and authorities with your live location.</p>
+            </div><br><br>
+
+            <div class="first">
+                <h3>Real-time Tracking:</h3><br>
+                <p class="grey">Ensure that help can find you by sharing your GPS coordinates in real-time.
+            </div>
+            <br><br>
+
+
+            <div class="first">
+                <h3>Custom Emergency Contacts: </h3><br>
+                <p class="grey">Set up personalized contact lists for immediate notifications.</p>
+            </div>
+        </div>
+    </div>
+<br><br><br><br><br><br><br><br><br>
+    <!--testimonials-->
+ <!-- Testimonials Section -->
+<section id="testimonials-section" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">TESTIMONIALS</h2>
+        <br><br><br><br><br><br>
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="testimonial-wrapper">
+                        <div class="testimonial-card">
+                            <img src="girl.jpeg" class="testimonial-img" alt="User">
+                            <p>This app saved my life! Highly recommend.</p>
+                            <h5>- Sarah L.</h5>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="girl.jpeg" class="testimonial-img" alt="User">
+                            <p>A must-have for every woman.</p>
+                            <h5>- Rachel M.</h5>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="girl.jpeg" class="testimonial-img" alt="User">
+                            <p>I feel much safer now.</p>
+                            <h5>- Emily W.</h5>
+                        </div>
+                        <div class="testimonial-card">
+                            <img src="girl.jpeg" class="testimonial-img" alt="User">
+                            <p>Super fast alerts! Amazing.</p>
+                            <h5>- Lisa K.</h5>
+                        </div>
+                    </div>
+                </div>
+
+                
+                        
+                    </div>
+                </div>
+
+            </div>
+
+          
+
+<!-- Add Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
